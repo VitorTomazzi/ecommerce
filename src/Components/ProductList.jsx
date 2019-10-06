@@ -5,8 +5,10 @@ export default class ProductList extends Component {
 	render() {
 		return (
 			<React.Fragment>
-				<p>Hello World</p>
-
+				<Product />
+				<Product />
+				<Product />
+				<Product />
 				<Product />
 			</React.Fragment>
 		);
