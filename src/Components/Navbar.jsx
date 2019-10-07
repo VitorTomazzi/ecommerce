@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import styled from 'styled-components';
 
 class Navbar extends Component {
 	render() {
@@ -12,15 +13,9 @@ class Navbar extends Component {
 					<Link className="nav-item nav-link active" to="/product-list">
 						Product List
 					</Link>
-					<Link className="nav-item nav-link" to="/cart">
-						Shopping Cart
+					<Link className="nav-item nav-link ml-auto" to="/cart">
+						<CartButton>Shopping Cart</CartButton>
 					</Link>
-					{/* <Link className="nav-item nav-link" to="#">
-						<p>E-Store</p>
-					</Link>
-					<Link className="nav-item nav-link disabled" to="#" aria-disabled="true">
-						<p>E-Store</p>
-					</Link> */}
 				</nav>
 			</React.Fragment>
 		);
@@ -28,3 +23,22 @@ class Navbar extends Component {
 }
 
 export default Navbar;
+
+
+//styled component for button. we can put this in its own component file later if we want
+const CartButton = styled.button`
+	background-color: transparent;
+	border: .05rem solid lightblue;
+	border-radius: .2rem;
+	color: white;
+	font-size: 1.4rem;
+	padding: .2rem .5rem;
+	cursor: pointer;
+	transition: all .5s ease-in-out;
+	&:hover {
+		background-color: lightblue;
+	}
+	&:focus {
+		outline: none;
+	}
+`;
