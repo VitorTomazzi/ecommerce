@@ -34,7 +34,10 @@ export default class Product extends Component {
 
 						<div className="card-footer d-flex justify-content-between">
 							<p className="align-self-center mb-0">{name}</p>
-							<h5 className="font-italic mb-0">${price}</h5>
+							<h5 className="font-italic mb-0" hidden>
+								{/* i hid the price for design reasons */}
+								${price}
+							</h5>
 						</div>
 					</div>
 				</CerealWrapper>
