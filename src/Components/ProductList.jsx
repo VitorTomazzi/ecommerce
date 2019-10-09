@@ -26,7 +26,7 @@ export default class ProductList extends Component {
 	showCereal = (value) => {
 		/* console.log(value); gives us all the data values */
 		/* cereal is the key prop from context with all the info that we pass to each child component */
-		return value.cereal.map((eachCereal, i) => {
+		return this.state.searchCereal.map((eachCereal, i) => {
 			return <Product key={i} cereal={eachCereal} />;
 		});
 	};
@@ -34,7 +34,7 @@ export default class ProductList extends Component {
 	render() {
 		return (
 			<React.Fragment>
-				{/* <div className="col-10 mx-auto col-md-8 mt-5 mb-5">
+				<div className="col-10 mx-auto col-md-8 mt-5 mb-5" style={{ border: '.1rem solid blue' }}>
 					<form>
 						<input
 							// value={this.state.filteredCereal}
@@ -45,30 +45,10 @@ export default class ProductList extends Component {
 							name="search"
 						/>
 					</form>
-				</div> */}
+				</div>
 
-				<ProductWrapper className="container" style={{ border: '.2rem solid blue' }}>
-					<div className="row">
-						{/* this is where the data from the Context gets passed into */}
-						{/* now we map through data array called value in this case, 
-						with map and return all the data values we want  */}
-						<ProductConsumer>
-							<div className="col-10 mx-auto col-md-8 mt-5 mb-5">
-								<form>
-									<input
-										// value={this.state.filteredCereal}
-										onChange={this.searchCereal}
-										placeholder="Search"
-										id="search"
-										type="text"
-										name="search"
-									/>
-								</form>
-							</div>
-
-							{this.showCereal}
-						</ProductConsumer>
-					</div>
+				<ProductWrapper className="container">
+					<div className="row">{this.showCereal()}</div>
 				</ProductWrapper>
 			</React.Fragment>
 		);
