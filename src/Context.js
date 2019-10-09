@@ -45,6 +45,13 @@ class ProductProvider extends Component {
 		const index = tempCereal.indexOf(this.getCereal(id));
 		const cereal = tempCereal[index];
 		cereal.inCart = true;
+
+		// console.log(cereal);
+
+		this.state.cart.push(cereal);
+
+		// console.log(this.state.cart);
+
 		this.setState(() => {
 			return (
 				{
@@ -56,6 +63,7 @@ class ProductProvider extends Component {
 				}
 			);
 		});
+		// console.log(this.state.cart);
 	};
 
 	render() {
@@ -65,7 +73,7 @@ class ProductProvider extends Component {
 					// destructured allows us to get ALL properties in data
 					...this.state,
 					handleDetail: this.handleDetail,
-					addToCart: this.addToCart,
+					addToCart: this.addToCart
 					// test: () => console.log('test')
 				}}
 			>
