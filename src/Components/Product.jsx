@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { ProductConsumer } from '../Context';
+// import { ProductConsumer } from '../Context';
 
 export default class Product extends Component {
 	render() {
@@ -11,14 +11,17 @@ export default class Product extends Component {
 			<React.Fragment>
 				<CerealWrapper className="mx-auto col-9 col-md-6 col-lg-3 my-3">
 					<div className="card">
-						<div className="cereal-image" onClick={console.log('send to product details')}>
+						<div 
+						className="cereal-image" 
+						//onClick={console.log('send to product details')}
+						>
 							<Link to={'/product/id'}>
 								<img className="card-img-top" src={image} alt="cereal box" />
 							</Link>
 							{/* disabled logic is once the item is added to the shopping cart we dont want to be able to re add it */}
 							<button
 								className="cart-button"
-								onClick={console.log('added to cart')}
+								//onClick={console.log('added to cart')}
 								disabled={inCart ? true : false}
 							>
 								{inCart ? (
@@ -27,7 +30,8 @@ export default class Product extends Component {
 										In Cart
 									</p>
 								) : (
-									<i class="fas fa-shopping-cart" />
+									/* <i class="fas fa-shopping-cart" /> */
+									<i className="fas fa-plus" />
 								)}
 							</button>
 						</div>

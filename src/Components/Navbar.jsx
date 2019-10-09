@@ -8,7 +8,7 @@ class Navbar extends Component {
 			<React.Fragment>
 				<nav className="navbar navbar-dark bg-dark">
 					<Link className="navbar-brand" to="/">
-						E-Store
+						Krunch
 					</Link>
 					<Link className="nav-item nav-link active" to="/product-list">
 						Product List
@@ -23,7 +23,6 @@ class Navbar extends Component {
 }
 
 export default Navbar;
-
 
 //styled component for button. we can put this in its own component file later if we want
 const CartButton = styled.button`
