@@ -13,7 +13,6 @@ export default class Details extends Component {
 							id,
 							name,
 							image,
-							price,
 							inCart,
 							calories,
 							protein,
@@ -50,7 +49,7 @@ export default class Details extends Component {
 											<li>Overall Health Rating: {rating}</li>
 										</ul>
 										<div>
-											<Link to="/product-list">
+											<Link to="/cereal-list">
 												<BackButton>Back to Cereals</BackButton>
 											</Link>
 											<Link to="#">

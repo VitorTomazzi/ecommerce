@@ -3,13 +3,13 @@ import React, { Component } from 'react';
 // import { Link } from 'react-router-dom';
 // import { ProductConsumer } from '../Context';
 import HowItWorks from './HowItWorks';
-// import WhoWeAre from './WhoWeAre';
+import WhoWeAre from './WhoWeAre';
 
 export default class Home extends Component {
 	render() {
 		return (
 			<React.Fragment>
-				{/* <WhoWeAre /> */}
+				<WhoWeAre />
 				<HowItWorks />
 			</React.Fragment>
 		);

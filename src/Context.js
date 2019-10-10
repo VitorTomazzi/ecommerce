@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { data } from './cereal';
-import { is } from '@babel/types';
+// import { is } from '@babel/types';
 
 const ProductContext = React.createContext();
 //context object always comes with two components: a provider and consumer
@@ -48,22 +48,19 @@ class ProductProvider extends Component {
 
 		// console.log(cereal);
 
-		this.state.cart.push(cereal);
+		//this.state.cart.push(cereal);
 
-		// console.log(this.state.cart);
+		console.log(this.state.cart);
 
-		this.setState(() => {
-			return (
-				{
-					cereal: tempCereal,
-					cart: [ ...this.state.cart, cereal ]
-				},
-				() => {
-					console.log(this.state);
-				}
-			);
-		});
-		// console.log(this.state.cart);
+		this.setState(
+			{
+				cereal: tempCereal,
+				cart: [ ...this.state.cart, cereal ]
+			},
+			() => {
+				console.log(this.state);
+			}
+		);
 	};
 
 	render() {

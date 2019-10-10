@@ -10,8 +10,8 @@ class Navbar extends Component {
 					<Link className="navbar-brand" to="/">
 						Krunch
 					</Link>
-					<Link className="nav-item nav-link active" to="/product-list">
-						Product List
+					<Link className="nav-item nav-link active" to="/cereal-list">
+						Cereal List
 					</Link>
 					<Link className="nav-item nav-link ml-auto" to="/cart">
 						<CartButton>Shopping Cart</CartButton>

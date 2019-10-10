@@ -4,7 +4,7 @@ import './App.css';
 import { Switch, Route, Link } from 'react-router-dom';
 import Home from './Components/Home.jsx';
 import Navbar from './Components/Navbar.jsx';
-import ProductList from './Components/ProductList.jsx';
+import CerealList from './Components/CerealList.jsx';
 import Details from './Components/Details.jsx';
 import Cart from './Components/Cart.jsx';
 
@@ -16,8 +16,8 @@ export default class App extends Component {
 
 				<Switch>
 					<Route exact path="/" component={Home} />
-					<Route exact path="/product-list" component={ProductList} />
-					<Route exact path="/product/:id" component={Details} />
+					<Route exact path="/cereal-list" component={CerealList} />
+					<Route exact path="/cereal/:id" component={Details} />
 					<Route exact path="/cart" component={Cart} />
 				</Switch>
 			</React.Fragment>

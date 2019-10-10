@@ -35,7 +35,7 @@ export default class HowItWorks extends Component {
 						</div>
 					</div>
 					<div className="button">
-						<Link to="/product-list">
+						<Link to="/cereal-list">
 							<StartButton>Let's get started!</StartButton>
 						</Link>
 					</div>
