@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { data } from './cereal';
+
 // import { is } from '@babel/types';
 
 const ProductContext = React.createContext();
@@ -50,7 +51,7 @@ class ProductProvider extends Component {
 
 		//this.state.cart.push(cereal);
 
-		console.log(this.state.cart);
+		// console.log(this.state.cart);
 
 		this.setState(
 			{
@@ -63,6 +64,17 @@ class ProductProvider extends Component {
 		);
 	};
 
+	searchCereal = (e) => {
+		// console.log(e.target.value);
+		let search = e.target.value;
+		let filtered = data.filter((entry) => {
+			return entry.name.toLowerCase().includes(search.toLowerCase());
+		});
+		this.setState({
+			cereal: filtered
+		});
+	};
+
 	render() {
 		return (
 			<ProductContext.Provider
@@ -70,7 +82,9 @@ class ProductProvider extends Component {
 					// destructured allows us to get ALL properties in data
 					...this.state,
 					handleDetail: this.handleDetail,
-					addToCart: this.addToCart
+					addToCart: this.addToCart,
+					searchCereal: this.searchCereal,
+					showCereal: this.showCereal
 					// test: () => console.log('test')
 				}}
 			>

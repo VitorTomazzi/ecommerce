@@ -6,7 +6,7 @@ import { ProductConsumer } from '../Context';
 export default class Cereal extends Component {
 	render() {
 		const { id, image, name, inCart } = this.props.cereal;
-		console.log(this.props.inCart);
+		// console.log(this.props.inCart);
 		return (
 			<React.Fragment>
 				<ProductConsumer>
@@ -24,7 +24,7 @@ export default class Cereal extends Component {
 										onClick={() => value.addToCart(id)}
 									>
 										{' '}
-										{console.log(inCart, '?')}
+										{/* {console.log(inCart, '?')} */}
 										{/* {inCart ? 
 										<i className="fas fa-check" /> 
 										: 
