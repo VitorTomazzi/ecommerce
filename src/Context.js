@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { data } from './cereal';
+import { glue } from './glue';
 
 // import { is } from '@babel/types';
 
@@ -11,6 +12,7 @@ class ProductProvider extends Component {
 		cereal: [],
 		glue: [],
 		details: data[0], //placeholder from data set
+		glueDetails: glue[0], //placeholder from data set
 		cart: [],
 		isModalOpen: false,
 		modalProduct: data[0] //placeholder from data set
@@ -21,7 +23,7 @@ class ProductProvider extends Component {
 		this.setProducts();
 	}
 	setProducts = () => {
-		console.log(data);
+		// console.log(data);
 		let tempCereal = [];
 		data.forEach((item) => {
 			tempCereal.push({ ...item });

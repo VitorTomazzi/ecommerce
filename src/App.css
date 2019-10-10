@@ -5,8 +5,13 @@ font-family: 'Bitter', serif; */
 
 body {
 	background-color: #f3f3f3;
+	font-family: 'Bitter', serif;
 }
 
+.hero-text h1 {
+	font-family: 'Luckiest Guy', cursive;
+}
 
-
-
+.hero-text p {
+	font-family: 'Bitter', serif;
+}

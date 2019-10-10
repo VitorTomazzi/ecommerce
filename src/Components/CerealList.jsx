@@ -12,10 +12,10 @@ export default class CerealList extends Component {
 				<ProductConsumer>
 					{(value) => (
 						<div>
-							{console.log(value)}
 							<CerealTitle>
 								<h1>Pick your favorite cereal</h1>
 							</CerealTitle>
+
 							<Search className="col-10 mx-auto col-md-8 mt-5 mb-5">
 								<form>
 									<input
@@ -28,6 +28,7 @@ export default class CerealList extends Component {
 									/>
 								</form>
 							</Search>
+
 							<CerealListWrapper>
 								{value.cereal.map((eachCereal, i) => {
 									return <Cereal key={i} cereal={eachCereal} />;
@@ -41,7 +42,11 @@ export default class CerealList extends Component {
 	}
 }
 
-const CerealTitle = styled.div`text-align: center;`;
+const CerealTitle = styled.div`
+	text-align: center;
+	font-family: 'Luckiest Guy', cursive;
+	margin-top: 2rem;
+`;
 
 const CerealListWrapper = styled.div`
 	border: .2rem solid blue;
