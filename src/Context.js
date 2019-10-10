@@ -9,9 +9,10 @@ const ProductContext = React.createContext();
 class ProductProvider extends Component {
 	state = {
 		cereal: [],
+		glue: [],
 		details: data[0], //placeholder from data set
 		cart: [],
-		modal: false,
+		isModalOpen: false,
 		modalProduct: data[0] //placeholder from data set
 	};
 
@@ -20,6 +21,7 @@ class ProductProvider extends Component {
 		this.setProducts();
 	}
 	setProducts = () => {
+		console.log(data);
 		let tempCereal = [];
 		data.forEach((item) => {
 			tempCereal.push({ ...item });
@@ -82,13 +84,13 @@ class ProductProvider extends Component {
 		const product = this.getCereal(id);
 		this.setState({
 			modalProduct: product,
-			modal: true
+			isModalOpen: true
 		});
 	};
 
 	closeModal = () => {
 		this.setState({
-			modal: false
+			isModalOpen: false
 		});
 	};
 

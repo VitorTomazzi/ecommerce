@@ -9,10 +9,10 @@ export default class ModalCereal extends Component {
 			<React.Fragment>
 				<ProductConsumer>
 					{(value) => {
-						const { modal, closeModal } = value;
-						const { id, name, image } = value.modalProduct;
+						const { isModalOpen, closeModal } = value;
+						const { name, image } = value.modalProduct;
 
-						if (!modal) {
+						if (!isModalOpen) {
 							return null;
 						} else {
 							return (
@@ -61,6 +61,7 @@ const ModalContainer = styled.div`
 	left: 0;
 	right: 0;
 	bottom: 0;
+	text-align: center;
 	display: flex;
 	align-items: center;
 	justify-content: center;

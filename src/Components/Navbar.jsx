@@ -11,7 +11,10 @@ class Navbar extends Component {
 						Krunch
 					</Link>
 					<Link className="nav-item nav-link active" to="/cereal-list">
-						Cereal List
+						Brick's List
+					</Link>
+					<Link className="nav-item nav-link active" to="/glue-list">
+						Mortar's List
 					</Link>
 					<Link className="nav-item nav-link ml-auto" to="/cart">
 						<CartButton>Shopping Cart</CartButton>

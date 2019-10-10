@@ -28,7 +28,7 @@ const Hero = styled.div`
 	/* The hero image */
 	.hero-image {
 		/* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
-		background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+		background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.1)),
 			url("https://images.unsplash.com/photo-1515774004412-e3185c2a8217?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1984&q=80");
 
 		/* Set a specific height */
@@ -46,9 +46,15 @@ const Hero = styled.div`
 	.hero-text {
 		text-align: center;
 		position: absolute;
-		top: 50%;
+		top: 40%;
 		left: 50%;
 		transform: translate(-50%, -50%);
-		color: white;
+		color: rgba(0, 0, 0, .8);
+	}
+	.hero-text h1 {
+		font-size: 4rem;
+	}
+	.hero-text p {
+		font-size: 1.5rem;
 	}
 `;

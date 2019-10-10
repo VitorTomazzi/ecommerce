@@ -1,26 +1,27 @@
 import React, { Component } from 'react';
-import Cereal from './Cereal.jsx';
+import Glue from './Glue.jsx';
 import { ProductConsumer } from '../Context';
 import styled from 'styled-components';
-// import { data } from '../cereal';
+// import { data } from '../glue'; make glue DB
 // import Search from './Search';
 
-export default class CerealList extends Component {
+export default class GlueList extends Component {
 	render() {
 		return (
 			<React.Fragment>
 				<ProductConsumer>
 					{(value) => (
+                        
 						<div>
-							{console.log(value)}
-							<CerealTitle>
-								<h1>Pick your favorite cereal</h1>
-							</CerealTitle>
+							<GlueTitle>
+								<h1>Pick your favorite Glue</h1>
+							</GlueTitle>
+
 							<Search className="col-10 mx-auto col-md-8 mt-5 mb-5">
 								<form>
 									<input
-										// value={this.state.filteredCereal}
-										onChange={value.searchCereal}
+										// value={this.state.filteredGlue}
+										onChange={value.searchGlue}
 										placeholder="Search"
 										id="search"
 										type="text"
@@ -28,11 +29,12 @@ export default class CerealList extends Component {
 									/>
 								</form>
 							</Search>
-							<CerealListWrapper>
-								{value.cereal.map((eachCereal, i) => {
-									return <Cereal key={i} cereal={eachCereal} />;
+
+							<GlueListWrapper>
+								{value.glue.map((eachGlue, i) => {
+									return <Glue key={i} glue={eachGlue} />;
 								})}
-							</CerealListWrapper>
+							</GlueListWrapper>
 						</div>
 					)}
 				</ProductConsumer>
@@ -41,9 +43,11 @@ export default class CerealList extends Component {
 	}
 }
 
-const CerealTitle = styled.div`text-align: center;`;
+const GlueTitle = styled.div`text-align: center;
 
-const CerealListWrapper = styled.div`
+`;
+
+const GlueListWrapper = styled.div`
 	border: .2rem solid blue;
 	display: flex;
 	flex-wrap: wrap;
