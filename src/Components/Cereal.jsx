@@ -33,7 +33,7 @@ export default class Cereal extends Component {
 									</div>
 
 									<div className="card-footer d-flex justify-content-between">
-										<p className="align-self-center mb-0">{name}</p>
+										<h5 className="align-self-center mb-0 text-center">{name}</h5>
 									</div>
 								</div>
 							</CerealWrapper>
@@ -47,7 +47,6 @@ export default class Cereal extends Component {
 
 const CerealWrapper = styled.div`
 	position: relative;
-
 	.card {
 		border-color: transparent;
 	}
@@ -57,6 +56,8 @@ const CerealWrapper = styled.div`
 	}
 	.cereal-image {
 		overflow: hidden;
+		height: 23rem;
+		padding: 2rem;
 	}
 	.cart-button {
 		position: absolute;

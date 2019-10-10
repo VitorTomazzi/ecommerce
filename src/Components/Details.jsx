@@ -76,10 +76,13 @@ export default class Details extends Component {
 }
 
 const DetailsWrapper = styled.div`
-	border: .2rem solid red;
+	background-color: white;
+	border-radius: .5rem;
+	margin-top: 1rem;
 	.details-image img {
-		width: 25rem;
+		width: 20rem;
 		overflow: hidden;
+		margin-bottom: 1rem;
 	}
 	.nutrition ul {
 		list-style: none;
