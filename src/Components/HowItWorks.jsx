@@ -77,6 +77,9 @@ const How = styled.div`
 		text-align: center;
 		margin-top: 3rem;
 	}
+	.how-heading {
+		margin-bottom: 2.5rem;
+	}
 `;
 
 //styled component for button. we can put this in its own component file later if we want

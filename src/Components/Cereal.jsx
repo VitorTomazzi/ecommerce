@@ -21,15 +21,14 @@ export default class Cereal extends Component {
 									<button
 										className="cart-button"
 										disabled={inCart ? true : false}
-										onClick={() => value.addToCart(id)}
+										onClick={() => {
+											value.addToCart(id);
+											value.openModal(id);
+										}}
 									>
 										{' '}
-										{/* {console.log(inCart, '?')} */}
-										{/* {inCart ? 
-										<i className="fas fa-check" /> 
-										: 
-										<i className="fas fa-plus" />} */}
-										<i className={'fas ' + (inCart ? 'fa-check' : 'fa-plus')} />
+										{inCart ? <i className="fas fa-check" /> : <i className="fas fa-plus" />}
+										{/* <i className={'fas ' + (inCart ? 'fa-check' : 'fa-plus')} /> */}
 									</button>
 								</div>
 

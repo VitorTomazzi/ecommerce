@@ -9,8 +9,10 @@ const ProductContext = React.createContext();
 class ProductProvider extends Component {
 	state = {
 		cereal: [],
-		details: data[0],
-		cart: []
+		details: data[0], //placeholder from data set
+		cart: [],
+		modal: false,
+		modalProduct: data[0] //placeholder from data set
 	};
 
 	// this creates a copy of the data so that when we change things we arent changing the original data
@@ -75,6 +77,21 @@ class ProductProvider extends Component {
 		});
 	};
 
+	// might rename const once mortars get integrated
+	openModal = (id) => {
+		const product = this.getCereal(id);
+		this.setState({
+			modalProduct: product,
+			modal: true
+		});
+	};
+
+	closeModal = () => {
+		this.setState({
+			modal: false
+		});
+	};
+
 	render() {
 		return (
 			<ProductContext.Provider
@@ -84,7 +101,9 @@ class ProductProvider extends Component {
 					handleDetail: this.handleDetail,
 					addToCart: this.addToCart,
 					searchCereal: this.searchCereal,
-					showCereal: this.showCereal
+					showCereal: this.showCereal,
+					openModal: this.openModal,
+					closeModal: this.closeModal
 					// test: () => console.log('test')
 				}}
 			>
