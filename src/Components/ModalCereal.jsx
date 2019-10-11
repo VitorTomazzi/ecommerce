@@ -24,24 +24,27 @@ export default class ModalCereal extends Component {
 												<img src={image} className="img-fluid" alt="cereal box" />
 												<h4>{name}</h4>
 
-												<Link to="/cereal-list">
-													<BackButton
-														onClick={() => {
-															closeModal();
-														}}
-													>
-														Back to Cereals
-													</BackButton>
-												</Link>
-												<Link to="/glue-list">
-													<NextButton
-														onClick={() => {
-															closeModal();
-														}}
-													>
-														Back to Glue
-													</NextButton>
-												</Link>
+												<div className="buttons">
+													<Link to="/cereal-list">
+														<BackButton
+															onClick={() => {
+																closeModal();
+															}}
+														>
+															Back
+														</BackButton>
+													</Link>
+
+													<Link to="/glue-list">
+														<NextButton
+															onClick={() => {
+																closeModal();
+															}}
+														>
+															To Glue!
+														</NextButton>
+													</Link>
+												</div>
 
 												{/* <Link to="/cereal-list">
 													<BackButton
@@ -75,7 +78,6 @@ export default class ModalCereal extends Component {
 }
 
 const ModalContainer = styled.div`
-	border: .1rem solid green;
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -88,6 +90,12 @@ const ModalContainer = styled.div`
 	background: rgba(0, 0, 0, .3);
 	#modal {
 		background: white;
+		border-radius: 1rem;
+		padding: 3rem;
+	}
+	#modal > .buttons {
+		display: flex;
+		justify-content: space-around;
 	}
 `;
 
@@ -111,8 +119,8 @@ const BackButton = styled.button`
 `;
 
 const NextButton = styled.button`
-	background-color: lightgreen;
-	border: .05rem solid lightgreen;
+	background-color: #f0a4f0;
+	border: .05rem solid #f0a4f0;
 	border-radius: .4rem;
 	color: white;
 	font-size: 1.4rem;
@@ -121,7 +129,7 @@ const NextButton = styled.button`
 	transition: all .5s ease-in-out;
 	&:hover {
 		background-color: white;
-		color: lightgreen;
+		color: #f0a4f0;
 	}
 	&:focus {
 		outline: none;

@@ -10,6 +10,7 @@ export default class Cereal extends Component {
 			<React.Fragment>
 				<ProductConsumer>
 					{(value) => {
+						console.log(this.props.match.path)
 						return (
 							<CerealWrapper className="mx-auto col-9 col-md-6 col-lg-3 my-3">
 								<div className="card">
@@ -63,7 +64,7 @@ const CerealWrapper = styled.div`
 		position: absolute;
 		right: 0;
 		bottom: 0;
-		background-color: lightblue;
+		background-color: #f0a4f0;
 		border: none;
 		color: white;
 		outline: none;

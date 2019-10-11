@@ -12,7 +12,7 @@ export default class CerealList extends Component {
 			<React.Fragment>
 				<ProductConsumer>
 					{(value) => {
-						console.log(value);
+						//console.log(value);
 
 						return <Products {...this.props} value={value} />;
 					}}
@@ -24,29 +24,31 @@ export default class CerealList extends Component {
 
 class Products extends Component {
 	componentDidMount() {
-		console.log(this.props);
 		this.props.value.setProducts(this.props.match.path);
 	}
-
-	// componentDidUpdate(prevProps, prevState) {
-	// 	/**
-	// 	* this is the initial render
-	// 	* without a previous prop change
-	// 	*/
-	// 	if (prevProps == undefined) {
-	// 		return false;
-	// 	}
-	// 	this.props.value.setProducts(this.props.match.path);
-	// }
+	componentDidUpdate(prevProps) {
+		if (this.props.match.path !== prevProps.match.path) {
+			//Stops it from looping.  Only works if prevProps doesn't equal newProps
+			this.props.value.setProducts(this.props.match.path);
+		}
+		//this.props.value.setProducts(this.props.match.path);
+	}
 
 	render() {
-		console.log(this);
 		let value = this.props.value;
 		return (
 			<div>
-				<CerealTitle>
-					<h1>Pick your favorite cereal</h1>
-				</CerealTitle>
+				<ProductTitle>
+					{this.props.match.path === '/cereal-list' ? (
+						<h1>
+							Pick your favorite <span className="title">cereal</span>
+						</h1>
+					) : (
+						<h1>
+							Pick your favorite <span className="title">glue</span>
+						</h1>
+					)}
+				</ProductTitle>
 
 				<Search className="col-10 mx-auto col-md-8 mt-5 mb-5">
 					<form>
@@ -66,31 +68,32 @@ class Products extends Component {
 					</form>
 				</Search>
 
-				<CerealListWrapper>
+				<ProductListWrapper>
 					{value.cereal.map((eachCereal, i) => {
 						return <Cereal key={i} cereal={eachCereal} />;
 					})}
-				</CerealListWrapper>
+				</ProductListWrapper>
 			</div>
 		);
 	}
 }
 
-const CerealTitle = styled.div`
+const ProductTitle = styled.div`
 	text-align: center;
 	font-family: 'Luckiest Guy', cursive;
 	margin-top: 2rem;
+	.title {
+		color: #f0a4f0;
+	}
 `;
 
-const CerealListWrapper = styled.div`
-	border: .2rem solid blue;
+const ProductListWrapper = styled.div`
 	display: flex;
 	flex-wrap: wrap;
 `;
 
 const Search = styled.div`
-	border: .2rem solid red;
-	padding: 1rem;
+	padding: .5rem;
 	form {
 		display: flex;
 		justify-content: center;
@@ -113,7 +116,7 @@ const Search = styled.div`
 
 	.searchTerm {
 		width: 100vw;
-		border: 3px solid #00b4cc;
+		border: 3px solid #a4a4f0;
 		border-right: none;
 		padding: 1rem;
 		height: 1rem;
@@ -123,14 +126,14 @@ const Search = styled.div`
 	}
 
 	.searchTerm:focus {
-		color: #00b4cc;
+		color: #a4a4f0;
 	}
 
 	.searchButton {
 		width: 40px;
 		height: 38px;
-		border: 1px solid #00b4cc;
-		background: #00b4cc;
+		border: 1px solid #a4a4f0;
+		background: #a4a4f0;
 		text-align: center;
 		color: #fff;
 		border-radius: 0 5px 5px 0;

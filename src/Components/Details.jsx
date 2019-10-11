@@ -29,6 +29,7 @@ export default class Details extends Component {
 								<div className="row">
 									<div className="col-10 mx-auto text-center my-5">
 										<h1>{name}</h1>
+										<hr/>
 									</div>
 								</div>
 								<div className="row">
@@ -52,6 +53,7 @@ export default class Details extends Component {
 											<Link to="/cereal-list">
 												<BackButton>Back to Cereals</BackButton>
 											</Link>
+
 											<Link to="#">
 												<CartButton
 													disabled={inCart ? true : false}
@@ -60,7 +62,7 @@ export default class Details extends Component {
 														value.openModal(id);
 													}}
 												>
-													{inCart ? 'In Cart' : 'Add to Cart'}
+													{inCart ? 'In Cart' : 'Pick + Go to Glue'}
 												</CartButton>
 											</Link>
 										</div>
@@ -86,6 +88,10 @@ const DetailsWrapper = styled.div`
 	}
 	.nutrition ul {
 		list-style: none;
+	}
+	h1 {
+		font-family: 'Luckiest Guy', cursive;
+		font-size: 3rem;
 	}
 `;
 
