@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { data } from './cereal';
+import { cereal } from './cereal';
 import { glue } from './glue';
 
 // import { is } from '@babel/types';
@@ -9,29 +9,26 @@ const ProductContext = React.createContext();
 
 class ProductProvider extends Component {
 	state = {
-		cereal: [ ...data ],
+		cereal: [ ...cereal ],
 		glue: [],
-		details: data[0], //placeholder from data set
-		glueDetails: glue[0], //placeholder from data set
+		details: cereal[0], //placeholder from cereal set
+		// glueDetails: glue[0], //placeholder from cereal set
 		cart: [],
 		isModalOpen: false,
-		modalProduct: data[0] //placeholder from data set
+		modalProduct: cereal[0] //placeholder from cereal set
 	};
 
-	// this creates a copy of the data so that when we change things we arent changing the original data
+	// this creates a copy of the cereal so that when we change things we arent changing the original cereal
 	// componentDidMount() {
 	// 	this.setProducts();
 	// }
+
 	setProducts = (product) => {
 		console.log(product);
-		// console.log(data);
-		// let tempCereal = [];
-		// data.forEach((item) => {
-		// 	tempCereal.push({ ...item });
-		// // });
+
 		let products = [];
 		if (product === '/cereal-list') {
-			products = [ ...data ];
+			products = [ ...cereal ];
 		} else {
 			products = [ ...glue ];
 		}
@@ -80,7 +77,7 @@ class ProductProvider extends Component {
 	searchCereal = (e) => {
 		// console.log(e.target.value);
 		let search = e.target.value;
-		let filtered = data.filter((entry) => {
+		let filtered = cereal.filter((entry) => {
 			return entry.name.toLowerCase().includes(search.toLowerCase());
 		});
 		this.setState({

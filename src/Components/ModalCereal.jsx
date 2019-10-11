@@ -23,6 +23,7 @@ export default class ModalCereal extends Component {
 												<h3>Item Added to Cart</h3>
 												<img src={image} className="img-fluid" alt="cereal box" />
 												<h4>{name}</h4>
+
 												<Link to="/cereal-list">
 													<BackButton
 														onClick={() => {
@@ -32,15 +33,34 @@ export default class ModalCereal extends Component {
 														Back to Cereals
 													</BackButton>
 												</Link>
+												<Link to="/glue-list">
+													<NextButton
+														onClick={() => {
+															closeModal();
+														}}
+													>
+														Back to Glue
+													</NextButton>
+												</Link>
+
+												{/* <Link to="/cereal-list">
+													<BackButton
+														onClick={() => {
+															closeModal();
+														}}
+													>
+														Back to Cereals
+													</BackButton>
+												</Link>
 												<Link to="/cart">
-													<CartButton
+													<NextButton
 														onClick={() => {
 															closeModal();
 														}}
 													>
 														Go to Cart
-													</CartButton>
-												</Link>
+													</NextButton>
+												</Link> */}
 											</div>
 										</div>
 									</div>
@@ -90,7 +110,7 @@ const BackButton = styled.button`
 	}
 `;
 
-const CartButton = styled.button`
+const NextButton = styled.button`
 	background-color: lightgreen;
 	border: .05rem solid lightgreen;
 	border-radius: .4rem;

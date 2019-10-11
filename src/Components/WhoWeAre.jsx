@@ -17,8 +17,7 @@ export default class WhoWeAre extends Component {
 							<span className="b">un</span>
 							<span className="c">ch</span>
 						</h1>
-						<h3>Cereal Bars</h3>
-						<br/>
+						<h4>Cereal Bars</h4>
 						<p>Customize your mornings</p>
 						{/* <Link to=".how-heading">
 							<i class="fas fa-angle-down" />
@@ -52,43 +51,31 @@ const Hero = styled.div`
 	.hero-text {
 		text-align: center;
 		position: absolute;
-		top: 35%;
+		top: 38%;
 		left: 50%;
 		transform: translate(-50%, -50%);
 		color: rgba(0, 0, 0, .9);
 		${'' /* text-shadow: .1rem .1rem 1rem purple; */};
 	}
 	.hero-text h1 {
-		font-size: 8rem;
+		font-size: 7.5rem;
 		letter-spacing: .2rem;
-		${'' /* color: #EEAAFF; */} color: #BBFFAA;
+		color: #bbffaa;
 
 		text-shadow: .1rem .1rem .8rem rgba(0, 0, 0, .2);
 	}
-	.hero-text h3 {
+	.hero-text h4 {
 		font-size: 3rem;
 		letter-spacing: .2rem;
-		${'' /* color: #EEAAFF; */} color: #EEAAFF;
+		color: #eeaaff;
 
 		text-shadow: .1rem .1rem .8rem rgba(0, 0, 0, .2);
 	}
 	.hero-text p {
 		font-size: 2.2rem;
-		${'' /* border: .1rem solid black; */} width: 30rem;
-		${'' /* color: #BBFFAA;	 */} color: #EEAAFF;
+		width: 30rem;
+		color: #eeaaff;
 
 		margin-left: 1rem;
 	}
-	${'' /* .a {
-		color: #c967ff;
-		text-shadow: .1rem .1rem .8rem #c967ff;
-	}
-	.b {
-		color: #ffc967;
-		text-shadow: .1rem .1rem .8rem #ffc967;
-	}
-	.c {
-		color: #67ffc9;
-		text-shadow: .1rem .1rem .8rem #67ffc9;
-	} */};
 `;
