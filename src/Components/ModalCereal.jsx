@@ -5,18 +5,21 @@ import { ProductConsumer } from '../Context';
 
 export default class ModalCereal extends Component {
 	render() {
+		console.log(this)
+
 		return (
 			<React.Fragment>
 				<ProductConsumer>
 					{(value) => {
 						const { isModalOpen, closeModal } = value;
 						const { name, image } = value.modalProduct;
-
 						if (!isModalOpen) {
 							return null;
 						} else {
 							return (
 								<ModalContainer>
+
+
 									<div className="container">
 										<div className="row">
 											<div id="modal" className="col-8 col-md-6 col-lg-4 mx-auto p-5">
@@ -45,25 +48,6 @@ export default class ModalCereal extends Component {
 														</NextButton>
 													</Link>
 												</div>
-
-												{/* <Link to="/cereal-list">
-													<BackButton
-														onClick={() => {
-															closeModal();
-														}}
-													>
-														Back to Cereals
-													</BackButton>
-												</Link>
-												<Link to="/cart">
-													<NextButton
-														onClick={() => {
-															closeModal();
-														}}
-													>
-														Go to Cart
-													</NextButton>
-												</Link> */}
 											</div>
 										</div>
 									</div>

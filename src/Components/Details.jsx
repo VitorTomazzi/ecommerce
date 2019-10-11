@@ -5,6 +5,7 @@ import { ProductConsumer } from '../Context';
 
 export default class Details extends Component {
 	render() {
+		console.log(this);
 		return (
 			<React.Fragment>
 				<ProductConsumer>
@@ -24,12 +25,15 @@ export default class Details extends Component {
 							potass,
 							rating
 						} = value.details;
+
+						console.log(value);
+
 						return (
 							<DetailsWrapper className="container">
 								<div className="row">
 									<div className="col-10 mx-auto text-center my-5">
 										<h1>{name}</h1>
-										<hr/>
+										<hr />
 									</div>
 								</div>
 								<div className="row">
@@ -49,13 +53,15 @@ export default class Details extends Component {
 											<li>Fiber: {fiber} grams</li>
 											<li>Overall Health Rating: {rating}</li>
 										</ul>
+
+										{this.props.match.path === '/cereal'?
 										<div>
 											<Link to="/cereal-list">
 												<BackButton>Back to Cereals</BackButton>
 											</Link>
 
 											<Link to="#">
-												<CartButton
+												<NextButton
 													disabled={inCart ? true : false}
 													onClick={() => {
 														value.addToCart(id);
@@ -63,9 +69,27 @@ export default class Details extends Component {
 													}}
 												>
 													{inCart ? 'In Cart' : 'Pick + Go to Glue'}
-												</CartButton>
+												</NextButton>
 											</Link>
 										</div>
+										:
+										<div>
+											<Link to="/glue-list">
+												<BackButton>Back to Glue</BackButton>
+											</Link>
+
+											<Link to="#">
+												<NextButton
+													disabled={inCart ? true : false}
+													onClick={() => {
+														value.addToCart(id);
+														value.openModal(id);
+													}}
+												>
+													{inCart ? 'In Cart' : 'Pick + Go to Cart'}
+												</NextButton>
+											</Link>
+										</div>}
 									</div>
 								</div>
 							</DetailsWrapper>
@@ -114,7 +138,7 @@ const BackButton = styled.button`
 	}
 `;
 
-const CartButton = styled.button`
+const NextButton = styled.button`
 	background-color: lightgreen;
 	border: .05rem solid lightgreen;
 	border-radius: .4rem;

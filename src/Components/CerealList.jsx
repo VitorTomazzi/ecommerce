@@ -2,9 +2,7 @@ import React, { Component } from 'react';
 import Cereal from './Cereal.jsx';
 import { ProductConsumer } from '../Context';
 import styled from 'styled-components';
-import { ProductContext } from '../Context';
-// import { data } from '../cereal';
-// import Search from './Search';
+// import { ProductContext } from '../Context';
 
 export default class CerealList extends Component {
 	render() {
@@ -31,7 +29,6 @@ class Products extends Component {
 			//Stops it from looping.  Only works if prevProps doesn't equal newProps
 			this.props.value.setProducts(this.props.match.path);
 		}
-		//this.props.value.setProducts(this.props.match.path);
 	}
 
 	render() {
@@ -70,7 +67,7 @@ class Products extends Component {
 
 				<ProductListWrapper>
 					{value.cereal.map((eachCereal, i) => {
-						return <Cereal key={i} cereal={eachCereal} />;
+						return <Cereal key={i} cereal={eachCereal} {...this.props} />;
 					})}
 				</ProductListWrapper>
 			</div>

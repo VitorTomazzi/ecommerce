@@ -10,9 +10,8 @@ const ProductContext = React.createContext();
 class ProductProvider extends Component {
 	state = {
 		cereal: [ ...cereal ],
-		glue: [],
+		glue: [...glue],
 		details: cereal[0], //placeholder from cereal set
-		// glueDetails: glue[0], //placeholder from cereal set
 		cart: [],
 		isModalOpen: false,
 		modalProduct: cereal[0] //placeholder from cereal set
@@ -24,7 +23,7 @@ class ProductProvider extends Component {
 	// }
 
 	setProducts = (product) => {
-		console.log(product);
+		// console.log(product);
 
 		let products = [];
 		if (product === '/cereal-list') {
