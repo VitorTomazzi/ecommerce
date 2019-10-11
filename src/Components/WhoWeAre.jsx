@@ -17,6 +17,8 @@ export default class WhoWeAre extends Component {
 							<span className="b">un</span>
 							<span className="c">ch</span>
 						</h1>
+						<h3>Cereal Bars</h3>
+						<br/>
 						<p>Customize your mornings</p>
 						{/* <Link to=".how-heading">
 							<i class="fas fa-angle-down" />
@@ -59,17 +61,21 @@ const Hero = styled.div`
 	.hero-text h1 {
 		font-size: 8rem;
 		letter-spacing: .2rem;
-		${'' /* color: #EEAAFF; */}
-		color: #BBFFAA;	
+		${'' /* color: #EEAAFF; */} color: #BBFFAA;
 
-		text-shadow: .1rem .1rem .8rem rgba(0, 0, 0, .2);;
+		text-shadow: .1rem .1rem .8rem rgba(0, 0, 0, .2);
+	}
+	.hero-text h3 {
+		font-size: 3rem;
+		letter-spacing: .2rem;
+		${'' /* color: #EEAAFF; */} color: #EEAAFF;
 
+		text-shadow: .1rem .1rem .8rem rgba(0, 0, 0, .2);
 	}
 	.hero-text p {
 		font-size: 2.2rem;
 		${'' /* border: .1rem solid black; */} width: 30rem;
-		${'' /* color: #BBFFAA;	 */}
-		color: #EEAAFF;
+		${'' /* color: #BBFFAA;	 */} color: #EEAAFF;
 
 		margin-left: 1rem;
 	}

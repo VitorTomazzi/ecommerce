@@ -2,47 +2,60 @@ import React, { Component } from 'react';
 import Cereal from './Cereal.jsx';
 import { ProductConsumer } from '../Context';
 import styled from 'styled-components';
+import { ProductContext } from '../Context';
 // import { data } from '../cereal';
 // import Search from './Search';
 
 export default class CerealList extends Component {
+	componentDidMount() {
+		console.log(this.props.match.path);
+		console.log(this.context);
+	}
+
 	render() {
+		var path = this.props.match.path;
 		return (
 			<React.Fragment>
 				<ProductConsumer>
-					{(value) => (
-						<div>
-							<CerealTitle>
-								<h1>Pick your favorite cereal</h1>
-							</CerealTitle>
+					{(value) => {
+						console.log(value);
+						{
+							/* value.setProducts(path); */
+						}
+						return (
+							<div>
+								<CerealTitle>
+									<h1>Pick your favorite cereal</h1>
+								</CerealTitle>
 
-							<Search className="col-10 mx-auto col-md-8 mt-5 mb-5">
-								<form>
-									<div className="wrap">
-										<div className="search">
-											<input
-												name="search"
-												id="search"
-												onChange={value.searchCereal}
-												type="text"
-												className="searchTerm"
-												placeholder="What are you looking for?"
-											/>
-											<button type="submit" className="searchButton">
-												<i className="fa fa-search" />
-											</button>
+								<Search className="col-10 mx-auto col-md-8 mt-5 mb-5">
+									<form>
+										<div className="wrap">
+											<div className="search">
+												<input
+													name="search"
+													id="search"
+													onChange={value.searchCereal}
+													type="text"
+													className="searchTerm"
+													placeholder="What are you looking for?"
+												/>
+												<button type="submit" className="searchButton">
+													<i className="fa fa-search" />
+												</button>
+											</div>
 										</div>
-									</div>
-								</form>
-							</Search>
+									</form>
+								</Search>
 
-							<CerealListWrapper>
-								{value.cereal.map((eachCereal, i) => {
-									return <Cereal key={i} cereal={eachCereal} />;
-								})}
-							</CerealListWrapper>
-						</div>
-					)}
+								<CerealListWrapper>
+									{value.cereal.map((eachCereal, i) => {
+										return <Cereal key={i} cereal={eachCereal} />;
+									})}
+								</CerealListWrapper>
+							</div>
+						);
+					}}
 				</ProductConsumer>
 			</React.Fragment>
 		);

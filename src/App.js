@@ -18,6 +18,8 @@ export default class App extends Component {
 				<Switch>
 					<Route exact path="/" component={Home} />
 					<Route exact path="/cereal-list" component={CerealList} />
+					<Route exact path="/glue-list" component={CerealList} />
+
 					<Route exact path="/cereal/:id" component={Details} />
 					<Route exact path="/cart" component={Cart} />
 				</Switch>

@@ -9,7 +9,7 @@ const ProductContext = React.createContext();
 
 class ProductProvider extends Component {
 	state = {
-		cereal: [],
+		cereal: [ ...data ],
 		glue: [],
 		details: data[0], //placeholder from data set
 		glueDetails: glue[0], //placeholder from data set
@@ -19,17 +19,24 @@ class ProductProvider extends Component {
 	};
 
 	// this creates a copy of the data so that when we change things we arent changing the original data
-	componentDidMount() {
-		this.setProducts();
-	}
-	setProducts = () => {
+	// componentDidMount() {
+	// 	this.setProducts();
+	// }
+	setProducts = (product) => {
+		console.log(product);
 		// console.log(data);
-		let tempCereal = [];
-		data.forEach((item) => {
-			tempCereal.push({ ...item });
-		});
+		// let tempCereal = [];
+		// data.forEach((item) => {
+		// 	tempCereal.push({ ...item });
+		// // });
+		let products = [];
+		if (product === '/cereal-list') {
+			products = [ ...data ];
+		} else {
+			products = [ ...glue ];
+		}
 		this.setState(() => {
-			return { cereal: tempCereal };
+			return { cereal: products };
 		});
 	};
 
@@ -102,6 +109,7 @@ class ProductProvider extends Component {
 				value={{
 					// destructured allows us to get ALL properties in data
 					...this.state,
+					setProducts: this.setProducts,
 					handleDetail: this.handleDetail,
 					addToCart: this.addToCart,
 					searchCereal: this.searchCereal,
