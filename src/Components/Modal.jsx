@@ -3,9 +3,9 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { ProductConsumer } from '../Context';
 
-export default class ModalCereal extends Component {
+export default class Modal extends Component {
 	render() {
-		console.log(this)
+		// console.log(this, this.props);
 
 		return (
 			<React.Fragment>
@@ -18,8 +18,6 @@ export default class ModalCereal extends Component {
 						} else {
 							return (
 								<ModalContainer>
-
-
 									<div className="container">
 										<div className="row">
 											<div id="modal" className="col-8 col-md-6 col-lg-4 mx-auto p-5">
@@ -38,15 +36,27 @@ export default class ModalCereal extends Component {
 														</BackButton>
 													</Link>
 
-													<Link to="/glue-list">
-														<NextButton
-															onClick={() => {
-																closeModal();
-															}}
-														>
-															To Glue!
-														</NextButton>
-													</Link>
+													{value.product === '/cereal-list' ? (
+														<Link to="/glue-list">
+															<NextButton
+																onClick={() => {
+																	closeModal();
+																}}
+															>
+																To Glue!
+															</NextButton>
+														</Link>
+													) : (
+														<Link to="/cart">
+															<NextButton
+																onClick={() => {
+																	closeModal();
+																}}
+															>
+																To Cart!
+															</NextButton>
+														</Link>
+													)}
 												</div>
 											</div>
 										</div>

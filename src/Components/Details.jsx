@@ -5,7 +5,7 @@ import { ProductConsumer } from '../Context';
 
 export default class Details extends Component {
 	render() {
-		console.log(this);
+		// console.log(this);
 		return (
 			<React.Fragment>
 				<ProductConsumer>

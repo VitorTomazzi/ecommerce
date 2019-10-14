@@ -7,10 +7,11 @@ import Navbar from './Components/Navbar.jsx';
 import CerealList from './Components/CerealList.jsx';
 import Details from './Components/Details.jsx';
 import Cart from './Components/Cart.jsx';
-import ModalCereal from './Components/ModalCereal.jsx';
+import Modal from './Components/Modal.jsx';
 
 export default class App extends Component {
 	render() {
+		// console.log(this);
 		return (
 			<React.Fragment>
 				<Navbar />
@@ -24,7 +25,7 @@ export default class App extends Component {
 					<Route exact path="/cart" component={Cart} />
 				</Switch>
 
-				<ModalCereal />
+				<Modal />
 			</React.Fragment>
 		);
 	}

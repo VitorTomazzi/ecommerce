@@ -10,11 +10,12 @@ const ProductContext = React.createContext();
 class ProductProvider extends Component {
 	state = {
 		cereal: [ ...cereal ],
-		glue: [...glue],
+		glue: [ ...glue ],
 		details: cereal[0], //placeholder from cereal set
 		cart: [],
 		isModalOpen: false,
-		modalProduct: cereal[0] //placeholder from cereal set
+		modalProduct: cereal[0], //placeholder from cereal set
+		product: ''
 	};
 
 	// this creates a copy of the cereal so that when we change things we arent changing the original cereal
@@ -32,7 +33,10 @@ class ProductProvider extends Component {
 			products = [ ...glue ];
 		}
 		this.setState(() => {
-			return { cereal: products };
+			return {
+				cereal: products,
+				product
+			};
 		});
 	};
 
