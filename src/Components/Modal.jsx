@@ -25,18 +25,18 @@ export default class Modal extends Component {
 												<img src={image} className="img-fluid" alt="cereal box" />
 												<h4>{name}</h4>
 
-												<div className="buttons">
-													<Link to="/cereal-list">
-														<BackButton
-															onClick={() => {
-																closeModal();
-															}}
-														>
-															Back
-														</BackButton>
-													</Link>
+												{value.product === '/cereal-list' ? (
+													<div className="buttons">
+														<Link to="/cereal-list">
+															<BackButton
+																onClick={() => {
+																	closeModal();
+																}}
+															>
+																Back
+															</BackButton>
+														</Link>
 
-													{value.product === '/cereal-list' ? (
 														<Link to="/glue-list">
 															<NextButton
 																onClick={() => {
@@ -46,18 +46,30 @@ export default class Modal extends Component {
 																To Glue!
 															</NextButton>
 														</Link>
-													) : (
+													</div>
+												) : (
+													<div className="buttons">
+														<Link to="/glue-list">
+															<BackButton
+																onClick={() => {
+																	closeModal();
+																}}
+															>
+																Back
+															</BackButton>
+														</Link>
+
 														<Link to="/cart">
 															<NextButton
 																onClick={() => {
 																	closeModal();
 																}}
 															>
-																To Cart!
+																To Your Cart!
 															</NextButton>
 														</Link>
-													)}
-												</div>
+													</div>
+												)}
 											</div>
 										</div>
 									</div>

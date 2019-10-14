@@ -15,7 +15,8 @@ class ProductProvider extends Component {
 		cart: [],
 		isModalOpen: false,
 		modalProduct: cereal[0], //placeholder from cereal set
-		product: ''
+		product: '',
+
 	};
 
 	// this creates a copy of the cereal so that when we change things we arent changing the original cereal

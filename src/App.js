@@ -6,7 +6,7 @@ import Home from './Components/Home.jsx';
 import Navbar from './Components/Navbar.jsx';
 import CerealList from './Components/CerealList.jsx';
 import Details from './Components/Details.jsx';
-import Cart from './Components/Cart.jsx';
+import Cart from './Components/Cart/Cart';
 import Modal from './Components/Modal.jsx';
 
 export default class App extends Component {
