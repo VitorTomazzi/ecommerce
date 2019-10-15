@@ -26,8 +26,6 @@ export default class Details extends Component {
 							rating
 						} = value.details;
 
-						console.log(value);
-
 						return (
 							<DetailsWrapper className="container">
 								<div className="row">

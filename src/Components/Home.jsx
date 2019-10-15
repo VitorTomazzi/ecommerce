@@ -7,7 +7,7 @@ import WhoWeAre from './WhoWeAre';
 
 export default class Home extends Component {
 	render() {
-		console.log(this);
+		// console.log(this);
 		return (
 			<React.Fragment>
 				<WhoWeAre />

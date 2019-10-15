@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import { cereal } from './cereal';
 import { glue } from './glue';
-// import { jsxIdentifier } from '@babel/types';
-// import { threadId } from 'worker_threads';
-// import { is } from '@babel/types';
 
 const ProductContext = React.createContext();
 //context object always comes with two components: a provider and consumer
@@ -62,17 +59,13 @@ class ProductProvider extends Component {
 		let tempCereal = [ ...this.state.cereal ];
 		const index = tempCereal.indexOf(this.getCereal(id));
 		const cereal = tempCereal[index];
-		//cereal.inCart = true;
 
 		// console.log(cereal);
-
-		//this.state.cart.push(cereal);
 
 		// console.log(this.state.cart);
 
 		this.setState(
 			{
-				//cereal: tempCereal,
 				cart: [ ...this.state.cart, cereal ]
 			},
 			() => {
@@ -110,7 +103,6 @@ class ProductProvider extends Component {
 	removeItem = (id, image) => {
 		console.log(this.state, id);
 		// console.log('item removed')
-		//	let tempProduct = [ ...this.state.cereal ];
 		let tempCart = [ ...this.state.cart ];
 		tempCart = tempCart.filter((item) => {
 			console.log(item, image, id, item.id, item.image, item.id === id, item.image === image);
@@ -118,13 +110,8 @@ class ProductProvider extends Component {
 		});
 
 		console.log(tempCart);
-		//const index = tempProduct.indexOf(this.getItem(id));
-		//let removedProduct = tempProduct[index];
-		//removedProduct.inCart = false;
 
 		this.setState({
-			//cart: [ ...this.state.cart ],
-			//cereal: [ ...this.state.cereal ]
 			cart: tempCart
 		});
 	};

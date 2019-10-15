@@ -10,7 +10,6 @@ export default class ProductList extends Component {
 				<ProductConsumer>
 					{(value) => {
 						//console.log(value);
-
 						return <Products {...this.props} value={value} />;
 					}}
 				</ProductConsumer>
@@ -51,7 +50,6 @@ class Products extends Component {
 						<div className="search">
 							<input
 								name="search"
-								// id="search"
 								onChange={value.searchCereal}
 								type="text"
 								className="searchTerm"
@@ -82,7 +80,7 @@ class Products extends Component {
 }
 
 function checkIfCerealInCart(eachCereal, cart) {
-	console.log(cart);
+	// console.log(cart);
 	for (let c = 0; c < cart.length; c++) {
 		let cereal = cart[c];
 		// console.log(cereal.image, eachCereal.image, cereal.image === eachCereal.image);
