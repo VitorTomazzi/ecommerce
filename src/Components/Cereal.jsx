@@ -5,7 +5,8 @@ import { ProductConsumer } from '../Context';
 
 export default class Cereal extends Component {
 	render() {
-		const { id, image, name, inCart } = this.props.cereal;
+		const { id, image, name } = this.props.cereal;
+		let inCart = this.props.inCart;
 		// console.log(this.props);
 
 		return (

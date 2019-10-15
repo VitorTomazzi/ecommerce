@@ -2,9 +2,8 @@ import React, { Component } from 'react';
 import Cereal from './Cereal.jsx';
 import { ProductConsumer } from '../Context';
 import styled from 'styled-components';
-// import { ProductContext } from '../Context';
 
-export default class CerealList extends Component {
+export default class ProductList extends Component {
 	render() {
 		return (
 			<React.Fragment>
@@ -67,11 +66,33 @@ class Products extends Component {
 
 				<ProductListWrapper>
 					{value.cereal.map((eachCereal, i) => {
-						return <Cereal key={i} cereal={eachCereal} {...this.props} />;
+						return (
+							<Cereal
+								key={i}
+								cereal={eachCereal}
+								{...this.props}
+								inCart={checkIfCerealInCart(eachCereal, value.cart)}
+							/>
+						);
 					})}
 				</ProductListWrapper>
 			</div>
 		);
+	}
+}
+
+function checkIfCerealInCart(eachCereal, cart) {
+	console.log(cart);
+	for (let c = 0; c < cart.length; c++) {
+		let cereal = cart[c];
+		// console.log(cereal.image, eachCereal.image, cereal.image === eachCereal.image);
+		if (cereal.image === eachCereal.image) {
+			//found a match
+			// console.log('match');
+			return true;
+		}
+		// console.log('no match');
+		return false;
 	}
 }
 

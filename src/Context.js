@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { cereal } from './cereal';
 import { glue } from './glue';
-
+// import { jsxIdentifier } from '@babel/types';
+// import { threadId } from 'worker_threads';
 // import { is } from '@babel/types';
 
 const ProductContext = React.createContext();
@@ -11,12 +12,14 @@ class ProductProvider extends Component {
 	state = {
 		cereal: [ ...cereal ],
 		glue: [ ...glue ],
-		details: cereal[0], //placeholder from cereal set
+		details: cereal[0], //placeholder from cereal dataset
 		cart: [],
 		isModalOpen: false,
-		modalProduct: cereal[0], //placeholder from cereal set
+		modalProduct: cereal[0], //placeholder from cereal dataset
 		product: '',
-
+		cartSubTotal: 0,
+		cartTax: 0,
+		cartTotal: 0
 	};
 
 	// this creates a copy of the cereal so that when we change things we arent changing the original cereal
@@ -59,7 +62,7 @@ class ProductProvider extends Component {
 		let tempCereal = [ ...this.state.cereal ];
 		const index = tempCereal.indexOf(this.getCereal(id));
 		const cereal = tempCereal[index];
-		cereal.inCart = true;
+		//cereal.inCart = true;
 
 		// console.log(cereal);
 
@@ -69,7 +72,7 @@ class ProductProvider extends Component {
 
 		this.setState(
 			{
-				cereal: tempCereal,
+				//cereal: tempCereal,
 				cart: [ ...this.state.cart, cereal ]
 			},
 			() => {
@@ -104,6 +107,32 @@ class ProductProvider extends Component {
 		});
 	};
 
+	removeItem = (id, image) => {
+		console.log(this.state, id);
+		// console.log('item removed')
+		//	let tempProduct = [ ...this.state.cereal ];
+		let tempCart = [ ...this.state.cart ];
+		tempCart = tempCart.filter((item) => {
+			console.log(item, image, id, item.id, item.image, item.id === id, item.image === image);
+			return item.id !== id || item.image !== image;
+		});
+
+		console.log(tempCart);
+		//const index = tempProduct.indexOf(this.getItem(id));
+		//let removedProduct = tempProduct[index];
+		//removedProduct.inCart = false;
+
+		this.setState({
+			//cart: [ ...this.state.cart ],
+			//cereal: [ ...this.state.cereal ]
+			cart: tempCart
+		});
+	};
+
+	clearCart = (id) => {
+		console.log('cart was cleared');
+	};
+
 	render() {
 		return (
 			<ProductContext.Provider
@@ -116,7 +145,9 @@ class ProductProvider extends Component {
 					searchCereal: this.searchCereal,
 					showCereal: this.showCereal,
 					openModal: this.openModal,
-					closeModal: this.closeModal
+					closeModal: this.closeModal,
+					removeItem: this.removeItem,
+					clearCart: this.clearCart
 					// test: () => console.log('test')
 				}}
 			>
