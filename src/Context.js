@@ -120,6 +120,22 @@ class ProductProvider extends Component {
 		console.log('cart was cleared');
 	};
 
+	// this is the state that needs to be lifted up from the products list so that we can access it in details page 
+	// checkIfCerealInCart = (eachCereal, cart) => {
+	// 	// console.log(cart);
+	// 	for (let c = 0; c < cart.length; c++) {
+	// 		let cereal = cart[c];
+	// 		// console.log(cereal.image, eachCereal.image, cereal.image === eachCereal.image);
+	// 		if (cereal.image === eachCereal.image) {
+	// 			//found a match
+	// 			// console.log('match');
+	// 			return true;
+	// 		}
+	// 		// console.log('no match');
+	// 		return false;
+	// 	}
+	// }
+
 	render() {
 		return (
 			<ProductContext.Provider
@@ -134,7 +150,8 @@ class ProductProvider extends Component {
 					openModal: this.openModal,
 					closeModal: this.closeModal,
 					removeItem: this.removeItem,
-					clearCart: this.clearCart
+					clearCart: this.clearCart,
+					// checkIfCerealInCart: this.checkIfCerealInCart
 					// test: () => console.log('test')
 				}}
 			>

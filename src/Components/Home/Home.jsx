@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 // import { ProductConsumer } from '../Context';
 import HowItWorks from './HowItWorks';
 import WhoWeAre from './WhoWeAre';
+import Testimonial from './Testimonial';
 
 export default class Home extends Component {
 	render() {
@@ -12,6 +13,7 @@ export default class Home extends Component {
 			<React.Fragment>
 				<WhoWeAre />
 				<HowItWorks />
+				<Testimonial />
 			</React.Fragment>
 		);
 	}

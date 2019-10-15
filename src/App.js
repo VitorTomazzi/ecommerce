@@ -1,15 +1,32 @@
 import React, { Component } from 'react';
-// import logo from './logo.svg';
 import './App.css';
 import { Switch, Route } from 'react-router-dom';
-import Home from './Components/Home.jsx';
+import Home from './Components/Home/Home';
 import Navbar from './Components/Navbar.jsx';
 import ProductList from './Components/ProductList.jsx';
 import Details from './Components/Details.jsx';
 import Cart from './Components/Cart/Cart';
 import Modal from './Components/Modal.jsx';
+import SignUp from './Components/SignUp';
+import api from './api';
 
 export default class App extends Component {
+	state = {
+		user: {}
+	};
+
+	componentDidMount() {
+		api
+			.getUser()
+			.then((user) => {
+				console.log(user);
+				this.setUser(user);
+			})
+			.catch((err) => console.error(err));
+	}
+	setUser = (user) => {
+		this.setState({ user });
+	};
 	render() {
 		// console.log(this);
 		return (
@@ -18,6 +35,7 @@ export default class App extends Component {
 
 				<Switch>
 					<Route exact path="/" component={Home} />
+					<Route exact path="/signup" render={(props) => <SignUp setUser={this.setUser} />} />
 					<Route exact path="/cereal-list" component={ProductList} />
 					<Route exact path="/glue-list" component={ProductList} />
 					<Route exact path="/cereal" component={Details} />

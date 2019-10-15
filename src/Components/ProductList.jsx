@@ -79,6 +79,7 @@ class Products extends Component {
 	}
 }
 
+// need to lift this up so that I can have access to it in the context and in turn in the details page 
 function checkIfCerealInCart(eachCereal, cart) {
 	// console.log(cart);
 	for (let c = 0; c < cart.length; c++) {
@@ -93,6 +94,7 @@ function checkIfCerealInCart(eachCereal, cart) {
 		return false;
 	}
 }
+
 
 const ProductTitle = styled.div`
 	text-align: center;
