@@ -10,36 +10,33 @@ export default class HowItWorks extends Component {
 					<div className="how-heading">
 						<h2> How it works </h2>
 					</div>
-					<div className="how-content">
-						<div className="how">
-							<img
-								className="how-pic"
-								src="https://img.icons8.com/ios/50/000000/salad-bowl.png"
-								alt="cereal"
-							/>
-							<h3>Pick your cereal</h3>
-						</div>
+					<div className="how-content text-capitalize">
+						<Link to="/cereal-list">
+							<div className="how">
+								<img
+									className="how-pic"
+									src="https://img.icons8.com/pastel-glyph/64/000000/milk-bottle.png"
+									alt="glue"
+								/>
+								<h3>Pick your ingredients</h3>
+							</div>
+						</Link>
 
 						<i class="fas fa-chevron-right" />
 
 						{/* <i class="fas fa-shipping-fast" /> */}
 
 						<div className="how">
-							<img src="https://img.icons8.com/pastel-glyph/64/000000/milk-bottle.png" alt="glue" />
-							<h3>Pick your glue</h3>
+							<img src="https://img.icons8.com/ios/50/000000/cooker.png" alt="oven" />
+							<h3>We'll do all the work</h3>
 						</div>
 
 						<i class="fas fa-chevron-right" />
 
 						<div className="how">
 							<img src="https://img.icons8.com/ios/50/000000/successful-delivery.png" alt="delivery" />
-							<h3>Sit tight then enjoy</h3>
+							<h3>Enjoy</h3>
 						</div>
-					</div>
-					<div className="button">
-						<Link to="/cereal-list">
-							<StartButton>Let's get started!</StartButton>
-						</Link>
 					</div>
 				</How>
 			</React.Fragment>
@@ -68,6 +65,9 @@ const How = styled.div`
 		align-items: center;
 		flex-wrap: wrap;
 	}
+	.how-content a {
+		text-decoration: none;
+	}
 	.how {
 		text-align: center;
 		background: white;
@@ -93,25 +93,5 @@ const How = styled.div`
 	.how-heading h2 {
 		font-size: 3.5rem;
 		font-family: 'Luckiest Guy', cursive;
-	}
-`;
-
-//styled component for button. we can put this in its own component file later if we want
-const StartButton = styled.button`
-	background-color: #a4a4f0;
-	border: .05rem solid #a4a4f0;
-	border-radius: .4rem;
-	color: white;
-	font-size: 1.4rem;
-	padding: .7rem .9rem;
-	cursor: pointer;
-	transition: all .5s ease-in-out;
-	box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, .1);
-	&:hover {
-		background-color: white;
-		color: #a4a4f0;
-	}
-	&:focus {
-		outline: none;
 	}
 `;

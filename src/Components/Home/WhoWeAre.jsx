@@ -17,12 +17,14 @@ export default class WhoWeAre extends Component {
 							<span className="b">un</span>
 							<span className="c">ch</span>
 						</h1>
-						<h5 className="text-capitalize">build-your-own breakfast</h5>
-						{/* <h5 className="text-capitalize">customize your mornings</h5> */}
-						{/* <p>Customize your mornings</p> */}
-						{/* <Link to=".how-heading">
-							<i class="fas fa-angle-down" />
-						</Link> */}
+						
+						<h5 className="text-capitalize">build-your-own breakfast bars</h5>
+
+						<div className="button-section">
+							<Link to="/cereal-list">
+								<StartButton>Let's get started!</StartButton>
+							</Link>
+						</div>
 					</div>
 				</div>
 			</Hero>
@@ -50,13 +52,14 @@ const Hero = styled.div`
 
 	/* Place text in the middle of the image */
 	.hero-text {
+		padding: 1rem;
 		display: flex;
 		justify-content: space-around;
 		flex-direction: column;
 		align-items: center;
-		${'' /* border: .1rem solid blue; */} text-align: center;
+		text-align: center;
 		position: absolute;
-		top: 38%;
+		top: 46%;
 		left: 50%;
 		transform: translate(-50%, -50%);
 		color: rgba(0, 0, 0, .9);
@@ -83,5 +86,28 @@ const Hero = styled.div`
 		color: #a4a4f0;
 
 		margin-left: 1rem;
+	}
+	.button-section {
+		margin-top: 2rem;
+	}
+`;
+
+//styled component for button. we can put this in its own component file later if we want
+const StartButton = styled.button`
+	background-color: #a4a4f0;
+	border: .05rem solid #a4a4f0;
+	border-radius: .4rem;
+	color: white;
+	font-size: 1.4rem;
+	padding: .7rem .9rem;
+	cursor: pointer;
+	transition: all .5s ease-in-out;
+	box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, .1);
+	&:hover {
+		background-color: white;
+		color: #a4a4f0;
+	}
+	&:focus {
+		outline: none;
 	}
 `;
