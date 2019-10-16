@@ -7,7 +7,8 @@ import ProductList from './Components/ProductList.jsx';
 import Details from './Components/Details.jsx';
 import Cart from './Components/Cart/Cart';
 import Modal from './Components/Modal.jsx';
-import SignUp from './Components/SignUp';
+import SignUp from './Components/User/SignUp';
+import Login from './Components/User/Login';
 import api from './api';
 
 export default class App extends Component {
@@ -36,6 +37,7 @@ export default class App extends Component {
 				<Switch>
 					<Route exact path="/" component={Home} />
 					<Route exact path="/signup" render={(props) => <SignUp setUser={this.setUser} />} />
+					<Route exact path="/login" render={(props) => <Login setUser={this.setUser} />} />
 					<Route exact path="/cereal-list" component={ProductList} />
 					<Route exact path="/glue-list" component={ProductList} />
 					<Route exact path="/cereal" component={Details} />

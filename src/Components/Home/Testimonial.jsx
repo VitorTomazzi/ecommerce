@@ -17,6 +17,13 @@ export default class Testimonial extends Component {
 									alt="user"
 								/>
 							</div>
+							<div className="rating">
+								<i class="fas fa-star" />
+								<i class="fas fa-star" />
+								<i class="fas fa-star" />
+								<i class="fas fa-star" />
+								<i class="fas fa-star" />
+							</div>
 							<p>
 								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
 								incididunt ut labore et dolore magna aliqua.
@@ -30,6 +37,13 @@ export default class Testimonial extends Component {
 									alt="user"
 								/>
 							</div>
+							<div className="rating">
+								<i class="fas fa-star" />
+								<i class="fas fa-star" />
+								<i class="fas fa-star" />
+								<i class="fas fa-star" />
+								<i class="fas fa-star" />
+							</div>
 							<p>
 								Ultrices mi tempus imperdiet nulla malesuada pellentesque elit eget gravida cum sociis
 								natoque penatibus et magnis dis
@@ -42,6 +56,13 @@ export default class Testimonial extends Component {
 									src="https://images.unsplash.com/photo-1554731340-80eb1d6cec50?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80"
 									alt="user"
 								/>
+							</div>
+							<div className="rating">
+								<i class="fas fa-star" />
+								<i class="fas fa-star" />
+								<i class="fas fa-star" />
+								<i class="fas fa-star" />
+								<i class="fas fa-star" />
 							</div>
 							<p>
 								Mi tempus imperdiet nulla malesuada pellentesque elit eget gravida cum sociis natoque
@@ -60,13 +81,16 @@ const Who = styled.div`
 	border-right-color: transparent;
 	border-left-color: transparent;
 	background-color: rgba(164, 164, 240, .2);
-
-	.who-content {
-		${'' /* border: .1rem solid blue; */};
+	.fa-star {
+		color: gold;
+	}
+	.rating {
+		padding: .5rem;
 	}
 	.who {
 		display: flex;
 		justify-content: space-around;
+		flex-direction: column;
 		align-items: center;
 		flex-wrap: wrap;
 		${'' /* border: .1rem solid green; */} margin: 3rem .5rem;

@@ -20,14 +20,14 @@ export default class HowItWorks extends Component {
 							<h3>Pick your brick</h3>
 						</div>
 
-						<img src="https://img.icons8.com/ios-glyphs/50/000000/more-than.png" alt="arrow" />
+						<i class="fas fa-chevron-right" />
 
 						<div className="how">
 							<img src="https://img.icons8.com/pastel-glyph/64/000000/milk-bottle.png" alt="glue" />
 							<h3>Pick your mortar</h3>
 						</div>
 
-						<img src="https://img.icons8.com/ios-glyphs/50/000000/more-than.png" alt="arrow" />
+						<i class="fas fa-chevron-right" />
 
 						<div className="how">
 							<img src="https://img.icons8.com/ios/50/000000/successful-delivery.png" alt="delivery" />
@@ -51,9 +51,15 @@ const How = styled.div`
 	justify-content: space-around;
 	align-items: center;
 	padding: 7rem;
-	border: .1rem solid black;
+	border: .03rem solid #a4a4f0;
 	border-right-color: transparent;
 	border-left-color: transparent;
+	color: #f0a4f0;
+	.fa-chevron-right {
+		color: #a4a4f0;
+		font-size: 3rem;
+		padding: 2rem;
+	}
 	.how-content {
 		display: flex;
 		justify-content: space-around;
@@ -63,12 +69,13 @@ const How = styled.div`
 	.how {
 		text-align: center;
 		background: white;
-		border: .1rem solid black;
+		border: .1rem solid #a4a4f0;
 		padding: 2rem;
 		border-radius: .5rem;
 		/* 320px */
 		width: 20rem;
 		height: 12rem;
+		color: #a4a4f0;
 	}
 	.how img {
 		margin-bottom: 1rem;
@@ -80,21 +87,25 @@ const How = styled.div`
 	.how-heading {
 		margin-bottom: 2.5rem;
 	}
+	.how-heading h2 {
+		font-size: 3.5rem;
+		font-family: 'Luckiest Guy', cursive;
+	}
 `;
 
 //styled component for button. we can put this in its own component file later if we want
 const StartButton = styled.button`
-	background-color: black;
-	border: .05rem solid black;
+	background-color: #a4a4f0;
+	border: .05rem solid #a4a4f0;
 	border-radius: .4rem;
 	color: white;
 	font-size: 1.4rem;
-	padding: .5rem .7rem;
+	padding: .7rem .9rem;
 	cursor: pointer;
 	transition: all .5s ease-in-out;
 	&:hover {
 		background-color: white;
-		color: black;
+		color: #a4a4f0;
 	}
 	&:focus {
 		outline: none;
