@@ -17,7 +17,8 @@ export default class WhoWeAre extends Component {
 							<span className="b">un</span>
 							<span className="c">ch</span>
 						</h1>
-						<h5>Custom Cereal Bars</h5>
+						<h5 className="text-capitalize">build-your-own breakfast</h5>
+						{/* <h5 className="text-capitalize">customize your mornings</h5> */}
 						{/* <p>Customize your mornings</p> */}
 						{/* <Link to=".how-heading">
 							<i class="fas fa-angle-down" />
@@ -49,13 +50,16 @@ const Hero = styled.div`
 
 	/* Place text in the middle of the image */
 	.hero-text {
-		text-align: center;
+		display: flex;
+		justify-content: space-around;
+		flex-direction: column;
+		align-items: center;
+		${'' /* border: .1rem solid blue; */} text-align: center;
 		position: absolute;
 		top: 38%;
 		left: 50%;
 		transform: translate(-50%, -50%);
 		color: rgba(0, 0, 0, .9);
-		${'' /* text-shadow: .1rem .1rem 1rem purple; */};
 	}
 	.hero-text h1 {
 		font-size: 7.5rem;
@@ -65,10 +69,12 @@ const Hero = styled.div`
 		text-shadow: .1rem .1rem .8rem rgba(0, 0, 0, .2);
 	}
 	.hero-text h5 {
-		font-size: 2.5rem;
+		font-size: 2.2rem;
 		letter-spacing: .2rem;
 		color: #a4a4f0;
-
+		width: 25rem;
+		text-align: center;
+		text-wrap: wrap;
 		text-shadow: .1rem .1rem .8rem rgba(0, 0, 0, .2);
 	}
 	.hero-text p {

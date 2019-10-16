@@ -24,10 +24,7 @@ export default class Testimonial extends Component {
 								<i class="fas fa-star" />
 								<i class="fas fa-star" />
 							</div>
-							<p>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-								incididunt ut labore et dolore magna aliqua.
-							</p>
+							<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod."</p>
 						</div>
 
 						<div className="col-lg col-md who">
@@ -44,10 +41,7 @@ export default class Testimonial extends Component {
 								<i class="fas fa-star" />
 								<i class="fas fa-star" />
 							</div>
-							<p>
-								Ultrices mi tempus imperdiet nulla malesuada pellentesque elit eget gravida cum sociis
-								natoque penatibus et magnis dis
-							</p>
+							<p>"Ultrices mi tempus imperdiet nulla malesuada pellentesque elit."</p>
 						</div>
 
 						<div className="col-lg col-md who">
@@ -64,10 +58,7 @@ export default class Testimonial extends Component {
 								<i class="fas fa-star" />
 								<i class="fas fa-star" />
 							</div>
-							<p>
-								Mi tempus imperdiet nulla malesuada pellentesque elit eget gravida cum sociis natoque
-								penatibus et magnis dis
-							</p>
+							<p>"Mi tempus imperdiet nulla malesuada pellentesque elit eget gravida."</p>
 						</div>
 					</div>
 				</Who>

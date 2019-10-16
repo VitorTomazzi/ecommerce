@@ -37,9 +37,9 @@ export default class Signup extends Component {
 			<SignUp>
 				<form id="signup" className="container">
 					<div className="header">
-						<h3>Sign Up</h3>
+						<h3>Who's Hungry?!</h3>
 
-						<p>You want to fill out this form</p>
+						<p>Let's get you all signed up</p>
 					</div>
 
 					<div className="sep" />
@@ -49,12 +49,14 @@ export default class Signup extends Component {
 							type="text"
 							value={this.state.username}
 							name="username"
+							placeholder="Username"
 							onChange={this.handleInputChange}
 						/>{' '}
 						<input
 							type="password"
 							value={this.state.password}
 							name="password"
+							placeholder="Password"
 							onChange={this.handleInputChange}
 						/>{' '}
 						<div className="checkboxy">
@@ -64,6 +66,7 @@ export default class Signup extends Component {
 						<button id="submit" className="hoverButton" onClick={(e) => this.handleClick(e)}>
 							Sign up
 						</button>
+						{this.state.message && <div className="info info-danger">{this.state.message}</div>}
 					</div>
 				</form>
 			</SignUp>
@@ -81,8 +84,8 @@ const SignUp = styled.div`
 	background-repeat: no-repeat;
 	background-size: cover;
 	position: relative;
-	background-image: linear-gradient(rgba(164, 164, 240, 0.5), rgba(164, 164, 240, 0.4)),
-		url("https://images.unsplash.com/photo-1504308805006-0f7a5f1f0f71?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80");
+	background-image: linear-gradient(rgba(164, 164, 240, 0.3), rgba(164, 164, 240, 0.05)),
+		url("https://images.unsplash.com/photo-1490567674331-72de84794694?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1651&q=80");
 	.container {
 		width: 406px;
 		max-width: 406px;
@@ -102,6 +105,7 @@ const SignUp = styled.div`
 
 	#signup .header {
 		margin-bottom: 20px;
+		text-align: center;
 	}
 
 	#signup .header h3 {
