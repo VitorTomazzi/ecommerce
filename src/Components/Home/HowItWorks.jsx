@@ -17,14 +17,16 @@ export default class HowItWorks extends Component {
 								src="https://img.icons8.com/ios/50/000000/salad-bowl.png"
 								alt="cereal"
 							/>
-							<h3>Pick your brick</h3>
+							<h3>Pick your cereal</h3>
 						</div>
 
 						<i class="fas fa-chevron-right" />
 
+						{/* <i class="fas fa-shipping-fast" /> */}
+
 						<div className="how">
 							<img src="https://img.icons8.com/pastel-glyph/64/000000/milk-bottle.png" alt="glue" />
-							<h3>Pick your mortar</h3>
+							<h3>Pick your glue</h3>
 						</div>
 
 						<i class="fas fa-chevron-right" />
@@ -76,6 +78,7 @@ const How = styled.div`
 		width: 20rem;
 		height: 12rem;
 		color: #a4a4f0;
+		box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, .1);
 	}
 	.how img {
 		margin-bottom: 1rem;
@@ -103,6 +106,7 @@ const StartButton = styled.button`
 	padding: .7rem .9rem;
 	cursor: pointer;
 	transition: all .5s ease-in-out;
+	box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, .1);
 	&:hover {
 		background-color: white;
 		color: #a4a4f0;

@@ -4,7 +4,7 @@ export const glue = [
 		price: 5,
 		inCart: false,
 		image:
-			'https://ship.ralphs.com/img/Products/500/Simple-Truth-Organic/Simple-Truth-Organic-No-Stir-Creamy-Peanut-Butter-Spread-011110791566.jpg',
+			'https://images-na.ssl-images-amazon.com/images/I/51RQkBjRd8L._SY355_.jpg',
 		name: 'Peanut Butter',
 		mfr: 'N',
 		type: 'C',
@@ -139,7 +139,7 @@ export const glue = [
 		id: 7,
 		price: 5,
 		inCart: false,
-		image: 'https://images-na.ssl-images-amazon.com/images/I/61XFB3H8dnL._SY550_.jpg',
+		image: 'https://i5.walmartimages.com/asr/725577f2-b744-4f5d-9679-5e1259553a75_1.fbfab6bb00c9dc3cd60eec8dff81798e.png?odnHeight=450&odnWidth=450&odnBg=FFFFFF',
 		name: 'Almond Butter',
 		mfr: 'R',
 		type: 'C',

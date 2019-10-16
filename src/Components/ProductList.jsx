@@ -53,7 +53,7 @@ class Products extends Component {
 								onChange={value.searchCereal}
 								type="text"
 								className="searchTerm"
-								placeholder="What are you looking for?"
+								placeholder="What's for breakfast?"
 							/>
 							<button type="submit" className="searchButton">
 								<i className="fa fa-search" />

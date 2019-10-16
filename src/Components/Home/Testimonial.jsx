@@ -97,6 +97,7 @@ const Who = styled.div`
 		background-color: white;
 		padding: 1.5rem;
 		border-radius: 1rem;
+		box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, .1);
 	}
 	.who-pic img {
 		margin-bottom: 1rem;
