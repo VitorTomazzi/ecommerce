@@ -25,9 +25,9 @@ export default class Signup extends Component {
 		api
 			.signup({ username: this.state.username, password: this.state.password })
 			.then((result) => {
-				console.log('SUCCESS!', result);
+				console.log('SUCCESS!', result, this);
 				this.props.setUser(result);
-				this.props.history.push('/login');
+				this.props.history.push("/recipes");
 			}) // Redirect to the login
 			.catch((err) => this.setState({ message: err.toString() }));
 	};

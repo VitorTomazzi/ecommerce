@@ -34,11 +34,11 @@ export default class App extends Component {
 		return (
 			<React.Fragment>
 				<Navbar />
-
+				{this.state.user.username}
 				<Switch>
 					<Route exact path="/" component={Home} />
-					<Route exact path="/signup" render={(props) => <SignUp setUser={this.setUser} />} />
-					<Route exact path="/login" render={(props) => <Login setUser={this.setUser} />} />
+					<Route exact path="/signup" render={(props) => <SignUp setUser={this.setUser} {...props} />} />
+					<Route exact path="/login" render={(props) => <Login setUser={this.setUser} {...props} />} />
 					{/* <Route exact path="/recipes" render={(props) => <Recipes setUser={this.setUser} />} /> */}
 					<Route exact path="/recipes" component={Recipes} />
 					<Route exact path="/cereal-list" component={ProductList} />

@@ -21,11 +21,13 @@ export default class Login extends Component {
 
 	handleClick(e) {
 		e.preventDefault();
+		console.log(this.state);
 		api
-			.login({username: this.state.username, password: this.state.password})
+			.login(this.state)
 			.then((result) => {
 				console.log('SUCCESS!', result);
-				this.props.history.push('/'); // Redirect to the home page
+				this.props.setUser(result);
+				this.props.history.push('/recipes'); // Redirect to the home page
 			})
 			.catch((err) => this.setState({ message: err.toString() }));
 	}
@@ -57,7 +59,6 @@ export default class Login extends Component {
 							placeholder="Password"
 							onChange={this.handleInputChange}
 						/>{' '}
-		
 						<button id="submit" className="hoverButton" onClick={(e) => this.handleClick(e)}>
 							Login
 						</button>
@@ -100,7 +101,7 @@ const LogIn = styled.div`
 
 	#login .header {
 		margin-bottom: 20px;
-        text-align: center;
+		text-align: center;
 	}
 
 	#login .header h3 {

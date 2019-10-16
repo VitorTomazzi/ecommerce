@@ -27,15 +27,11 @@ export default {
 	// Be careful, the value is the one when the user logged in for the last time
 	getLocalStorageUser() {
 		return JSON.parse(localStorage.getItem('user'));
-    },
-    
+	},
 
-    getUser() {
-        return service
-            .get('/getUser')
-            .then(res=>res.data)
-            .catch(errHandler)
-    },
+	getUser() {
+		return service.get('/getUser').then((res) => res.data).catch(errHandler);
+	},
 
 	// This method signs up and logs in the user
 	signup(userInfo) {
@@ -50,12 +46,9 @@ export default {
 			.catch(errHandler);
 	},
 
-	login(username, password) {
+	login(s) {
 		return service
-			.post('/login', {
-				username,
-				password
-			})
+			.post('/login', s)
 			.then((res) => {
 				// If we have localStorage.getItem('user') saved, the application will consider we are loggedin
 				localStorage.setItem('user', JSON.stringify(res.data));
