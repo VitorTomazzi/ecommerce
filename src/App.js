@@ -9,6 +9,7 @@ import Cart from './Components/Cart/Cart';
 import Modal from './Components/Modal.jsx';
 import SignUp from './Components/User/SignUp';
 import Login from './Components/User/Login';
+import Recipes from './Components/User/Recipes';
 import api from './api';
 
 export default class App extends Component {
@@ -38,6 +39,8 @@ export default class App extends Component {
 					<Route exact path="/" component={Home} />
 					<Route exact path="/signup" render={(props) => <SignUp setUser={this.setUser} />} />
 					<Route exact path="/login" render={(props) => <Login setUser={this.setUser} />} />
+					{/* <Route exact path="/recipes" render={(props) => <Recipes setUser={this.setUser} />} /> */}
+					<Route exact path="/recipes" component={Recipes} />
 					<Route exact path="/cereal-list" component={ProductList} />
 					<Route exact path="/glue-list" component={ProductList} />
 					<Route exact path="/cereal" component={Details} />

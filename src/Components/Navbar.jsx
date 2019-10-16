@@ -22,6 +22,9 @@ class Navbar extends Component {
 					<Link className="nav-item nav-link ml-auto active" to="/login">
 						Login
 					</Link>
+					<Link className="nav-item nav-link ml-auto active" to="/recipes">
+						Secret Recipe
+					</Link>
 					<Link className="nav-item nav-link ml-auto" to="/cart">
 						<CartButton>Cart</CartButton>
 					</Link>

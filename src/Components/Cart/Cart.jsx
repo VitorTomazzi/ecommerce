@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import { ProductConsumer } from '../../Context';
 import CartColumns from './CartColumns';
-import CartList from "./CartList"
+import CartList from './CartList';
+import { Link } from 'react-router-dom';
+import CheckoutModal from './CheckoutModal';
 
 export default class Cart extends Component {
 	render() {
@@ -19,7 +21,16 @@ export default class Cart extends Component {
 									</CartTitle>
 
 									<CartColumns />
-									<CartList value={value}/>
+									<CartList value={value} />
+
+									<CheckoutBtn
+										type="button"
+										class="btn btn-primary"
+										data-toggle="modal"
+										data-target="checkoutModal"
+									>
+										<CheckoutModal />
+									</CheckoutBtn>
 								</div>
 							);
 						} else {
@@ -41,3 +52,5 @@ const CartTitle = styled.div`
 	font-family: 'Luckiest Guy', cursive;
 	margin-top: 2rem;
 `;
+
+const CheckoutBtn = styled.button``;
